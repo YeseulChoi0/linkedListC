@@ -34,3 +34,25 @@ struct node * free_list(struct node *n){
     return free_list(save);
   }
 }
+
+struct node * remove_node(struct node *front, int data){
+  if (front == NULL){
+    printf("Empty list.\n");
+    return front;
+  }if (front->i == data){
+    return front->next;
+  }else{
+    struct node *oneBefore = front;
+    struct node *iterate = front -> next;
+    while(iterate != NULL){
+      if (iterate -> i == data){
+        oneBefore -> next = iterate -> next;
+        free(iterate);
+        return front;
+      }
+      oneBefore = iterate;
+      iterate = iterate -> next;
+    }
+    return front;
+  }
+}
