@@ -41,7 +41,9 @@ struct node * remove_node(struct node *front, int data){
     printf("Empty list.\n");
     return front;
   }if (front->i == data){
-    return front->next;
+    struct node *save = front->next;
+    free(front);
+    return save;
   }else{
     struct node *oneBefore = front;
     struct node *iterate = front -> next;
