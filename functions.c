@@ -25,6 +25,7 @@ struct node * insert_front(struct node *seed, int i){
 
 struct node * free_list(struct node *n){
   if (n == NULL){
+    free(n);
     printf("List freed. \n");
     return NULL;
   }else{
