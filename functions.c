@@ -24,16 +24,14 @@ struct node * insert_front(struct node *seed, int i){
 }
 
 struct node * free_list(struct node *n){
-  if (n == NULL){
-    free(n);
-    printf("List freed. \n");
-    return NULL;
-  }else{
+  if (n != NULL){
     printf("Freeing node: %d\n", n->i);
     struct node *save = n -> next;
     free(n);
     return free_list(save);
   }
+  printf("List freed. \n");
+  return NULL;
 }
 
 struct node * remove_node(struct node *front, int data){

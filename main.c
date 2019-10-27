@@ -3,7 +3,10 @@
 #include "header.h"
 
 int main(){
-  struct node *seed = (struct node *)malloc (sizeof(struct node)); //This is just an empty list
+
+  //Got rid of line below because of a memory loss error, with the help of Qaf, Ruoshui
+  //struct node *seed = (struct node *)malloc (sizeof(struct node)); //This is just an empty list
+  struct node *seed;
   seed = NULL;
   printf("Expecting: []\tResult: ");
   print_list(seed);
@@ -23,7 +26,8 @@ int main(){
   printf("\n");
 
   //removing a the indexes indicated by the number after finding
-  struct node *finding0 = (struct node *)malloc (sizeof(struct node));
+  //struct node *finding0 = (struct node *)malloc (sizeof(struct node));
+  struct node *finding0;
   finding0 = NULL;
   finding0 = insert_front(finding0, 0);
   printf("Initial list:\n");
@@ -43,7 +47,8 @@ int main(){
   free_list(finding0);
   printf("\n");
 
-  struct node *finding1 = (struct node *)malloc (sizeof(struct node));
+  //struct node *finding1 = (struct node *)malloc (sizeof(struct node));
+  struct node *finding1;
   finding1 = NULL;
   finding1 = insert_front(finding1, 0);
   finding1 = insert_front(finding1, 1);
@@ -55,7 +60,8 @@ int main(){
   free_list(finding1);
   printf("\n");
 
-  struct node *finding2 = (struct node *)malloc (sizeof(struct node));
+  //struct node *finding2 = (struct node *)malloc (sizeof(struct node));
+  struct node *finding2;
   finding2 = NULL;
   finding2 = insert_front(finding2, 0);
   finding2 = insert_front(finding2, 1);
